@@ -3,7 +3,7 @@ var router = express.Router();
 require("dotenv").config();
 var multer = require("multer");
 var fs = require("fs");
-const media_schema = require("../../../utils/Schema/MediaValidation/create");
+const media_schema = require("../../utils/Schema/MediaValidation/create");
 const BASE_URL =
   "https://ap-southeast-1.aws.data.mongodb-api.com/app/data-tjxqd/endpoint/data/v1";
 

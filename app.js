@@ -8,7 +8,7 @@ require("dotenv").config();
 let indexRouter = require("./routes/index");
 let userRouter = require("./routes/Admin/users");
 let carsRouter = require("./routes/Admin/cars");
-let mediaRouter = require("./routes/Admin/Media/media");
+let mediaRouter = require("./routes/Admin/media");
 let categoryRouter = require("./routes/Admin/cars-category");
 
 let app = express();
