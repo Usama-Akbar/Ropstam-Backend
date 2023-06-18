@@ -8,7 +8,7 @@ const car_schema = Joi.object({
   mileage: Joi.string().required(),
   price: Joi.string().required(),
   category: Joi.string().required(),
-  tags: Joi.array().required(),
+  tags: Joi.array(),
   meta_title: Joi.string().required(),
   meta_description: Joi.string().required(),
   featured: Joi.boolean().required(),
