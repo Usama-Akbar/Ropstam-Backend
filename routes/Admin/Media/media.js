@@ -220,69 +220,6 @@ router.get("/list", async function (req, res, next) {
   }
 });
 
-router.get("/get/:id", async function (req, res, next) {
-  try {
-    if (
-      req.header("x-access-token") === undefined ||
-      req.header("x-access-token").length === 0
-    ) {
-      res.status(403).json({
-        message: "A token is required for authentication.",
-        result: false,
-      });
-    } else {
-      VerifyToken(req.header("x-access-token")).then(async function (resolve) {
-        if (resolve.status === "unauthenticated") {
-          res.status(401).json({
-            message:
-              "Access denied, you are not allowed to access the API with this token.",
-            result: false,
-          });
-        } else {
-          const response = await fetch(
-            `${process.env.BASE_URL}/action/findOne`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                "api-key": process.env.API_KEY,
-              },
-              body: JSON.stringify({
-                collection: "media",
-                database: "Ropstam-Dev",
-                dataSource: "Ropstam",
-                filter: {
-                  _id: { $oid: req.params.id },
-                },
-              }),
-            }
-          );
-          let result = await response.json();
-          if (result.document === null) {
-            res.json({
-              user: "Media not found!",
-              result: false,
-            });
-          } else {
-            res.json({
-              user: result.document,
-              result: true,
-            });
-          }
-        }
-      });
-    }
-  } catch (e) {
-    console.log("ERROR is", e);
-    res.status(500).json({
-      message:
-        "There was a problem in retriving the media list, please try again.",
-      result: false,
-    });
-  }
-});
-
 router.delete("/delete/:id", async function (req, res, next) {
   try {
     if (
