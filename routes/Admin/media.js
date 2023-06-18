@@ -103,8 +103,8 @@ router.post("/upload", upload.single("file"), async function (req, res, next) {
               const AWS = require("aws-sdk");
 
               const s3 = new AWS.S3({
-                accessKeyId: "AKIAYXTDPPRT2Z2QV3BK",
-                secretAccessKey: "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",
+                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
               });
 
               const bucketName = "ropstam";
