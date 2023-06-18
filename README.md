@@ -15,7 +15,11 @@
 **5.2.2** User Login <br>
 **5.2.3** Retrieve User Details <br>
 **5.2.4** Update User Details <br>
-**5.2.5** Delete User Account <br>
+**5.2.5** Reset User Password <br>
+**5.2.6** Delete User Account <br>
+**5.2.7** Upload Media File <br>
+**5.2.8** Get Media Files <br>
+**5.2.9** Delete Media File <br>
 
 ### Error Handling
 
