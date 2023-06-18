@@ -41,12 +41,18 @@ The backend of the project is built using the following technologies:
 **joi**: Data Validations
 **S3**: AWS Media Storage
 ### Project Structure
-The project follows a common structure for an Express.js application. Here is an overview of the important files and directories:
-**app.js**: Entry point of the application
-**routes/**: Contains route files for car and user endpoints
-**middlewares/**: Contains middleware functions for authentication and error handling
-**upload/**: Contains Uploaded files that goes from multer to AWS S3 Bucket
-**utils/**: Contains utility schemas and validations used throughout the application
+The project follows a common structure for an Express.js application. Here is an overview of the important files and directories:<br>
+
+**app.js**: Entry point of the application<br>
+
+**routes/**: Contains route files for car and user endpoints<br>
+
+**middlewares/**: Contains middleware functions for authentication and error handling<br>
+
+**upload/**: Contains Uploaded files that goes from multer to AWS S3 Bucketv
+
+**utils/**: Contains utility schemas and validations used throughout the application<br>
+
 ### Installation and Setup
 To set up the project on your local machine, follow these steps:
 
