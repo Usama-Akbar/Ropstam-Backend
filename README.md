@@ -4,18 +4,18 @@
 
  ### API Endpoints
  
- **5.1**  Car CRUD
-**5.1.1** Create a Car
-**5.1.2** Retrieve All Cars
-**5.1.3** Retrieve a Single Car
-**5.1.4** Update a Car
-**5.1.5** Delete a Car
-**5.2**   Users Management
-**5.2.1** User Registration
-**5.2.2** User Login
-**5.2.3** Retrieve User Details
-**5.2.4** Update User Details
-**5.2.5** Delete User Account
+ **5.1**  Car CRUD <br>
+**5.1.1** Create a Car <br>
+**5.1.2** Retrieve All Cars <br>
+**5.1.3** Retrieve a Single Car <br>
+**5.1.4** Update a Car <br>
+**5.1.5** Delete a Car <br>
+**5.2**   Users Management <br>
+**5.2.1** User Registration <br>
+**5.2.2** User Login <br>
+**5.2.3** Retrieve User Details <br>
+**5.2.4** Update User Details <br>
+**5.2.5** Delete User Account <br>
 
 ### Error Handling
 
