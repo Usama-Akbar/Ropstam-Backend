@@ -27,12 +27,6 @@
 **5.2.8** Get Media Files <br>
 **5.2.9** Delete Media File <br>
 
-### Error Handling
-
-### Conclusion
-
-### Additional Resources
-
 ### Introduction
 This documentation serves as a guide for backend Express.js developers working on the Car CRUD and Users Management project. The project involves creating a RESTful API to perform CRUD operations on car data and managing user accounts.
 
