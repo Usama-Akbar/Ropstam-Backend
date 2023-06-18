@@ -6,6 +6,7 @@ const signup_schema = Joi.object({
   userType: Joi.string().required(),
   emailAddress: Joi.string().email().required(),
   mobileNumber: Joi.string().required(),
+  password: Joi.string().required(),
 });
 
 module.exports = signup_schema;

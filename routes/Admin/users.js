@@ -299,7 +299,7 @@ router.post("/sign-in", async function (req, res, next) {
         };
       });
 
-      return res.status(400).json({ errors: errorDetails });
+      return res.status(400).json({ result: false, errors: errorDetails });
     }
     const response = await fetch(`${process.env.BASE_URL}/action/findOne`, {
       method: "POST",
@@ -633,7 +633,7 @@ router.post("/reset-password", async function (req, res, next) {
     let result = await response.json();
     console.log(result);
     if (result.document !== null) {
-      await fetch(`${BASE_URL}/action/updateOne`, {
+      await fetch(`${process.env.BASE_URL}/action/updateOne`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
