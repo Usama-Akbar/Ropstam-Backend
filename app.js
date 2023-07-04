@@ -4,14 +4,40 @@ const cors = require("cors");
 let path = require("path");
 let cookieParser = require("cookie-parser");
 let logger = require("morgan");
+const ParseServer = require("parse-server").ParseServer;
 require("dotenv").config();
 let indexRouter = require("./routes/index");
-let userRouter = require("./routes/Admin/users");
-let carsRouter = require("./routes/Admin/cars");
-let mediaRouter = require("./routes/Admin/media");
-let categoryRouter = require("./routes/Admin/cars-category");
+let userRouter = require("./routes/users");
+let betRouter = require("./routes/bets");
+
+const Parse = require("parse/node");
 
 let app = express();
+
+// Connection URL
+
+// Initialize Parse Server
+const parseServer = new ParseServer({
+  databaseURI: process.env.DB_URI,
+  appId: "9381029",
+  masterKey: "9381029",
+  serverURL: "http://localhost:1337/parse",
+  allowClientClassCreation: true,
+  allowExpiredAuthDataToken: true, // Public URL to access Parse Server
+});
+
+// Mount Parse Server
+app.use("/parse", parseServer.app);
+
+// Connect to MongoDB
+Parse.initialize("9381029", "9381029");
+Parse.serverURL = "http://localhost:1337/parse";
+
+app.listen(1337, () => {
+  console.log("Parse Server is running on port 1337");
+});
+// Mount the Parse API server middleware to /parse
+// app.use("/parse", parseServer);
 
 app.use(cors());
 
@@ -35,9 +61,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", userRouter);
-app.use("/cars", carsRouter);
-app.use("/cars-category", categoryRouter);
-app.use("/media", mediaRouter);
+app.use("/bet", betRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

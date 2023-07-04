@@ -6,7 +6,7 @@ const cryprto = require("crypto");
 
 // Generate Access Token
 
-function generateAccessToken(data) {
+const generateAccessToken = (data) => {
   try {
     console.log(data);
     // set token expiration time
@@ -23,6 +23,6 @@ function generateAccessToken(data) {
   } catch (e) {
     console.log(e);
   }
-}
+};
 
 module.exports = generateAccessToken;
