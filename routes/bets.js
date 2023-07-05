@@ -40,7 +40,9 @@ router.post("/play", async function (req, res, next) {
         user: "User not found!",
         result: false,
       });
-    } else if (req.body.Deductedbalance > result.document.balance) {
+    } else if (
+      parseInt(req.body.Deductedbalance) > parseInt(result.document.balance)
+    ) {
       res.json({
         message: "You don't have enough balance to bet",
         result: false,
@@ -62,7 +64,7 @@ router.post("/play", async function (req, res, next) {
             filter: {
               emailAddress: req.body.emailAddress,
             },
-            update: { $inc: { balance: -req.body.Deductedbalance } },
+            update: { $inc: { balance: -parseInt(req.body.Deductedbalance) } },
           }),
         }
       );
@@ -84,7 +86,7 @@ router.post("/play", async function (req, res, next) {
             document: {
               emailAddress: req.body.emailAddress,
               betType: req.body.betType,
-              Deductedbalance: req.body.Deductedbalance,
+              Deductedbalance: parseInt(req.body.Deductedbalance),
               updatedAt: new Date(),
             },
           }),

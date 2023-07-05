@@ -173,7 +173,7 @@ router.post("/deposit-balance", async function (req, res, next) {
         filter: {
           emailAddress: req.body.emailAddress,
         },
-        update: { $inc: { balance: req.body.balance } },
+        update: { $inc: { balance: parseInt(req.body.balance) } },
       }),
     });
 
